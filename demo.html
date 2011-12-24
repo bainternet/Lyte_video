@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Lyte load youtube videos jQuery plugin</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="lyte_video.jQuery.js"></script>
+	</head>
+	<body style="background: none repeat scroll 0 0 #D9D9D9;">
+		<H1>Lyte load youtube videos jQuery plugin</H1>
+		<p>This is a very small jQuery plugin that will let you "late load" youtube videos.</p>
+		<h4>options</h4>
+		<table border=2>
+			<tr><td>Option</td><td>Defualt</td><td>Description</td></tr>
+			<tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
+			<tr><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
+			<tr><td>width</td><td>'560'</td><td>video width</td></tr>
+			<tr><td>height</td><td>'315'</td><td>video height</td></tr>
+			<tr><td>suggested</td><td>false</td><td>Show suggested videos</td></tr>
+			<tr><td>https</td><td>false</td><td>use HTTPS</td></tr>
+			<tr><td>privacy</td><td>false</td><td>Enable privacy mode</td></tr>
+			<tr><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
+			<tr><td>play_hd</td><td>false</td><td>Play In HD</td></tr>
+			<tr><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
+			<tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
+		</table>
+		<div>
+		<h2>How To Use:</h2>
+			<p>1. Include nessesary JS files</p>
+<pre style="background: #F2F2F2; width: 900px;"><code>
+&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/fancybox/lyte_video.jQuery.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+	<p>2. create an element with v_id attribute and set the value to a video it</p>
+<pre style="background: #F2F2F2; width: 900px;">
+&lt;div id=&quot;content&quot;&gt;
+	&lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	&lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	&lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;/div&gt;
+</pre>
+<p>3. last thing is to call the plugin on the container element</p>
+<pre style="background: #F2F2F2; width: 900px;">
+&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function(){
+				jQuery(&#39;#content&#39;).lyte_video();
+			});
+		&lt;/script&gt;
+</pre>
+		<H2>demo</H4>
+		</div>
+			<div id="content">
+				<div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
+				<div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
+				<div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
+			</div>
+
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#content').lyte_video();
+			});
+		</script>
+	</body>
+</html>
