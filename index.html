@@ -5,20 +5,9 @@
 
   <title>Lyte load youtube videos jQuery plugin</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
-  <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+  
   <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/dark.min.css">
-  <script>
-    $(document).ready(function() {
-      $('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
-
-      $('ul li a').click(function(e) {
-        e.preventDefault();
-        var selector = $(this).attr('href');
-        $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
-      });
-    });
-  </script>
+  
   <style type="text/css">
     body {margin-top: 1.0em;background: -moz-radial-gradient(center center , #E1E7EB, #BBBFC2) no-repeat fixed 0 0 transparent;font-family: Helvetica, Arial, FreeSans, san-serif;color: #ffffff;}
     #container {margin: 0 auto;width: 700px;}
@@ -67,13 +56,13 @@
     <div class="fly_menu" style="position: fixed; left: 30px; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 232px; width: 214px; border-radius: 25px 25px 25px 25px;">
     <h4>Quick Nave</h4>
     <ul style="list-style-type: square;">
-      <li><a href="#how-to-use">How To Use</a></li>
-      <li><a href="#download">Download</a></li>
-      <li><a href="#demo">Demo</a></li>
-      <li><a href="#o-and-api">Options and API</a></li>
-      <li><a href="#author">Author</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#lice">License</a></li>
+      <li><a class="sc" href="#how-to-use">How To Use</a></li>
+      <li><a class="sc" href="#download">Download</a></li>
+      <li><a class="sc" href="#demo">Demo</a></li>
+      <li><a class="sc" href="#o-and-api">Options and API</a></li>
+      <li><a class="sc" href="#author">Author</a></li>
+      <li><a class="sc" href="#contact">Contact</a></li>
+      <li><a class="sc" href="#lice">License</a></li>
 
     </ul>
     </div>
@@ -208,6 +197,18 @@
     </div>
 
   </div>
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
 
+      $('.sc').click(function(e) {
+        e.preventDefault();
+        var selector = $(this).attr('href');
+        $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
+  <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 </body>
 </html>
