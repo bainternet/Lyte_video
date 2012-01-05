@@ -10,7 +10,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
   <script>
-  var current_Div = 'how-to-use';
+	var current_Div = 'how-to-use';
     $(document).ready(function() {
       $('.m_code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
 	  $('.toc_an').hide('fast');
@@ -18,8 +18,8 @@
       $('.sc').live('click',function(e) {
         e.preventDefault();
 		$(current_Div).hide("fast");
-		current_Div = $(this).attr('name');
-        selector = 'div[n="' + $(this).attr('name') + '"]';
+		current_Div = $(this).attr('n');
+        selector = 'div[name="' + $(this).attr('name') + '"]';
         $(selector).show("4500");
       });
     });
