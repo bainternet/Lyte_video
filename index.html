@@ -18,8 +18,10 @@
       $('.sc').live('click',function(e) {
         e.preventDefault();
 		$('[name="'+ current_Div+ '"]').hide("fast");
+		$('[name="'+ current_Div+ '"]').removeClass("active");
 		current_Div = $(this).attr('n');
         selector = '[name="' + $(this).attr('n') + '"]';
+		$(selector).addClass("active");
         $(selector).show("4500");
       });
     });
@@ -46,13 +48,12 @@
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
     .center{text-align:center;}
-    .fly_menu{background: none repeat scroll 0 0 ##F8F8FF;border: 
-      2px solid #888844;color: #444400;margin-bottom: 1em;padding: 10px;width: 100%; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; border-radius: 20px;}
+    .fly_menu{color: #444400;margin-bottom: 1em;padding: 10px;width: 674px;}
     .navi{background: none repeat scroll 0 0 #444444;
     border: 1px solid;
     float: left;
-    margin: -20px 8px 8px;
-    padding: 3px;}
+    margin: -25px 8px 8px;
+    padding: 7px;}
     .fly_menu ul li a{text-decoration: none;}
     .toc_an{text-decoration: none;}
     .code_con{background: none repeat scroll 0 0 #444444; -moz-border-radius: 15px; -webkit-border-radius: 15px; -khtml-border-radius: 15px; border-radius: 15px;padding: 2px;}
@@ -65,6 +66,8 @@
     tr {background: none repeat scroll 0 0 #fff;}
     table{border-left: 1px solid #E2E2E2;
     margin-bottom: 15px;color: #000000;}
+	navi:hover{background-color:#448899;color:#ffffff;}
+	active{background-color:#448899;color:#ffffff;}
   </style>
   
 </head>
@@ -88,10 +91,10 @@
 		  Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
 		  This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
 		</div>
-		<div class="fly_menu" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); border-radius: 25px 25px 25px 25px;">
+		<div class="fly_menu" style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
 		
 		<ul style="list-style-type: none;">
-		  <li class="navi"><a class="sc" n="how-to-use">How To Use</a></li>
+		  <li class="navi active"><a class="sc" n="how-to-use">How To Use</a></li>
 		  <li class="navi"><a class="sc" n="download">Download</a></li>
 		  <li class="navi"><a class="sc" n="demo">Demo</a></li>
 		  <li class="navi"><a class="sc" n="o-and-api">Options and API</a></li>
@@ -135,7 +138,7 @@
 		</div>
 		<div class="toc_an" name="demo">
 			<h2>Demo</h2>
-			  <p>Using the exact code from above which is only 4 divs (1 container and 3 video place holders) the plugin knows to pull the video thumbnail and insert the image which is a lot faster on the page load time then having an object embed or an iframe and only when the user clicks the play button, the video is actually embedded and plays you can see it below.</p>
+			  <p>Using the exact code from the "how To Use" section which is only 4 divs (1 container and 3 video place holders) the plugin knows to pull the video thumbnail and insert the image which is a lot faster on the page load time then having an object embed or an iframe and only when the user clicks the play button, the video is actually embedded and plays you can see it below.</p>
 			  <div class="center">
 				<div id="content">
 				  <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
@@ -148,8 +151,8 @@
 				  jQuery('#content').lyte_video();
 				});
 			  </script>
-			  
-			<a class="toc_an" name="o-and-api">  </a>
+		</div>	  
+		<div class="toc_an" name="o-and-api">
 			<h2>Options and API</h2>
 			<p>You can pass options as key/value object to lyte_video() function</p>
 			
