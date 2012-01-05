@@ -10,14 +10,17 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
   <script>
+  var current_Div = 'how-to-use';
     $(document).ready(function() {
       $('.m_code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
-
-      $('.sc').bind('click',function(e) {
+	  $('.toc_an').hide('fast');
+	  $('[name="how-to-use"]').show('fast');
+      $('.sc').live('click',function(e) {
         e.preventDefault();
-        var selector = $(this).attr('href');
-        selector = '[name="' + selector.replace("#","") + '"]';
-        $(".bo").animate({scrollTop: ( $(".bo").scrollTop() + $(selector).position().top)},'2800');
+		$(current_Div).hide("fast");
+		current_Div = $(this).attr('name');
+        selector = 'div[n="' + $(this).attr('name') + '"]';
+        $(selector).show("4500");
       });
     });
   </script>
@@ -71,150 +74,142 @@
 
   <div id="container">
     <div id="header">
-    <div class="download">
-      <a href="https://github.com/bainternet/Lyte_video/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/bainternet/Lyte_video/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+		<div class="download">
+		  <a href="https://github.com/bainternet/Lyte_video/zipball/master">
+			<img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
+		  <a href="https://github.com/bainternet/Lyte_video/tarball/master">
+			<img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+		</div>
 
-    <h1><a href="https://github.com/bainternet/Lyte_video">Lyte_video</a>
-      <span class="small">by <a href="https://github.com/bainternet">bainternet</a></span></h1>
-    <a class="toc_an" name="top">  </a>
-    <div class="description">
-      Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
-      This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
-    </div>
-    <div class="fly_menu" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); border-radius: 25px 25px 25px 25px;">
-    
-    <ul style="list-style-type: none;">
-      <li class="navi"><a class="sc" href="#how-to-use">How To Use</a></li>
-      <li class="navi"><a class="sc" href="#download">Download</a></li>
-      <li  class="navi"><a class="sc" href="#demo">Demo</a></li>
-      <li  class="navi"><a class="sc" href="#o-and-api">Options and API</a></li>
-      <li class="navi"><a class="sc" href="#author">Author</a></li>
-      <li class="navi"><a class="sc" href="#contact">Contact</a></li>
-      <li class="navi"><a class="sc" href="#lice">License</a></li>
-    </ul>
-    </div>
+		<h1><a href="https://github.com/bainternet/Lyte_video">Lyte_video</a>
+		  <span class="small">by <a href="https://github.com/bainternet">bainternet</a></span></h1>
+		<a class="toc_an" name="top">  </a>
+		<div class="description">
+		  Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
+		  This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
+		</div>
+		<div class="fly_menu" style="background: none repeat scroll 0% 0% rgb(255, 255, 255); border-radius: 25px 25px 25px 25px;">
+		
+		<ul style="list-style-type: none;">
+		  <li class="navi"><a class="sc" n="how-to-use">How To Use</a></li>
+		  <li class="navi"><a class="sc" n="download">Download</a></li>
+		  <li class="navi"><a class="sc" n="demo">Demo</a></li>
+		  <li class="navi"><a class="sc" n="o-and-api">Options and API</a></li>
+		  <li class="navi"><a class="sc" n="author">Author</a></li>
+		  <li class="navi"><a class="sc" n="lice">License</a></li>
+		</ul>
+		</div>
     </div>
     <div class="bo">
-    <a class="toc_an" name="how-to-use">  </a>
-    <h2>How To Use?</h2>
-      <p>1. Include nessesary JS files</p>
-      <div class="code_con">
-        <pre><code class="m_code html">
-&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;lyte_video.jQuery.min.js&quot;&gt;&lt;/script&gt;
-        </code></pre>
-      </div>
+		<div class="toc_an" name="how-to-use">
+		<h2>How To Use?</h2>
+		  <p>1. Include nessesary JS files</p>
+		  <div class="code_con">
+			<pre><code class="m_code html">
+	&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;lyte_video.jQuery.min.js&quot;&gt;&lt;/script&gt;
+			</code></pre>
+		  </div>
 
-      <p>2. create an element with v_id attribute and set the value to a video it</p>
-      <div class="code_con">
-      <pre><code class=" m_code html">
-&lt;div id=&quot;content&quot;&gt;
-  &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
-  &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
-  &lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;/div&gt;
-      </code></pre>
-      </div>
+		  <p>2. create an element with v_id attribute and set the value to a video it</p>
+		  <div class="code_con">
+		  <pre><code class=" m_code html">
+	&lt;div id=&quot;content&quot;&gt;
+	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	&lt;/div&gt;
+		  </code></pre>
+		  </div>
 
-      <p>3. last thing is to call the plugin on the container element</p>
-      <div class="code_con">
-      <pre><code class="m_code html">
-&lt;script type=&quot;text/javascript&quot;&gt;
-  jQuery(document).ready(function(){
-    jQuery('#content').lyte_video();
-  });
-&lt;/script&gt;
-      </code></pre>
-      </div>
-
-    <a class="toc_an" name="demo">  </a>
-    <h2>Demo</h2>
-      <p>Using the exact code from above which is only 4 divs (1 container and 3 video place holders) the plugin knows to pull the video thumbnail and insert the image which is a lot faster on the page load time then having an object embed or an iframe and only when the user clicks the play button, the video is actually embedded and plays you can see it below.</p>
-      <div class="center">
-        <div id="content">
-          <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
-          <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
-          <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
-        </div>
-      </div>
-      <script type="text/javascript">
-        jQuery(document).ready(function(){
-          jQuery('#content').lyte_video();
-        });
-      </script>
-      
-    <a class="toc_an" name="o-and-api">  </a>
-    <h2>Options and API</h2>
-    <p>You can pass options as key/value object to lyte_video() function</p>
-    
-    <table border="0">
-      <tr><th>Option</th><th>Defualt</th><th>Description</th></tr>
-      <tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
-      <tr class="even"><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
-      <tr><td>width</td><td>'560'</td><td>video width</td></tr>
-      <tr class="even"><td>height</td><td>'315'</td><td>video height</td></tr>
-      <tr><td>suggested</td><td>false</td><td>Show suggested videos</td></tr>
-      <tr class="even"><td>https</td><td>false</td><td>use HTTPS</td></tr>
-      <tr><td>privacy</td><td>false</td><td>Enable privacy mode</td></tr>
-      <tr class="even"><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
-      <tr><td>play_hd</td><td>false</td><td>Play In HD</td></tr>
-      <tr class="even"><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
-      <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
-    </table>
-      <a class="toc_an" name="author">  </a>
-      <h2>Authors</h2>
-      <p>Bainternet</p>
-    
-
-      <a class="toc_an" name="contact">  </a>
-      <h2>Contact</h2>
-      <p><a href="http://en.bainternet.info/wordpress-services">WordPress Services</a>
-      <br/> </p>
-    
-    <a class="toc_an" name="lice">  </a>
-    <h2>License</h2>
-      <p>Copyright 2012, Ohad Raz<br/>
-      Dual licensed under the MIT and GPL licenses:
-      <ul>
-        <li>
-          <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
-        </li>
-        <li>
-          <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>
-        </li>
-      </ul>
-
-      
-    </p>
-
-    <a class="toc_an" name="download">  </a>
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/bainternet/Lyte_video/zipball/master">zip</a> or
-      <a href="https://github.com/bainternet/Lyte_video/tarball/master">tar</a> formats
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <div class="code_con" style="padding: 15px;">
-      <pre><code>$ git clone git://github.com/bainternet/Lyte_video<code></pre>
-    </div>
-    </p>
-  </div>
-  <div>  
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/bainternet/Lyte_video">bainternet/Lyte_video</a>
-    </div>
-
-  </div>
-
-  
-
-  <script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
-  
+		  <p>3. last thing is to call the plugin on the container element</p>
+		  <div class="code_con">
+		  <pre><code class="m_code html">
+	&lt;script type=&quot;text/javascript&quot;&gt;
+	  jQuery(document).ready(function(){
+		jQuery('#content').lyte_video();
+	  });
+	&lt;/script&gt;
+		  </code></pre>
+		  </div>
+		</div>
+		<div class="toc_an" name="demo">
+			<h2>Demo</h2>
+			  <p>Using the exact code from above which is only 4 divs (1 container and 3 video place holders) the plugin knows to pull the video thumbnail and insert the image which is a lot faster on the page load time then having an object embed or an iframe and only when the user clicks the play button, the video is actually embedded and plays you can see it below.</p>
+			  <div class="center">
+				<div id="content">
+				  <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
+				  <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
+				  <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
+				</div>
+			  </div>
+			  <script type="text/javascript">
+				jQuery(document).ready(function(){
+				  jQuery('#content').lyte_video();
+				});
+			  </script>
+			  
+			<a class="toc_an" name="o-and-api">  </a>
+			<h2>Options and API</h2>
+			<p>You can pass options as key/value object to lyte_video() function</p>
+			
+			<table border="0">
+			  <tr><th>Option</th><th>Defualt</th><th>Description</th></tr>
+			  <tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
+			  <tr class="even"><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
+			  <tr><td>width</td><td>'560'</td><td>video width</td></tr>
+			  <tr class="even"><td>height</td><td>'315'</td><td>video height</td></tr>
+			  <tr><td>suggested</td><td>false</td><td>Show suggested videos</td></tr>
+			  <tr class="even"><td>https</td><td>false</td><td>use HTTPS</td></tr>
+			  <tr><td>privacy</td><td>false</td><td>Enable privacy mode</td></tr>
+			  <tr class="even"><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
+			  <tr><td>play_hd</td><td>false</td><td>Play In HD</td></tr>
+			  <tr class="even"><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
+			  <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
+			</table>
+		</div>
+		<div class="toc_an" name="author"> 
+		  <h2>Authors</h2>
+		  <p>Bainternet</p>
+		  
+		  <h2>Contact</h2>
+		  <p><a href="http://en.bainternet.info/wordpress-services">WordPress Services</a>
+		  <br/> </p>
+		</div>
+		<div class="toc_an" name="lice">
+			<h2>License</h2>
+			  <p>Copyright 2012, Ohad Raz<br/>
+			  Dual licensed under the MIT and GPL licenses:
+			  <ul>
+				<li>
+				  <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
+				</li>
+				<li>
+				  <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>
+				</li>
+			  </ul>
+			</p>
+		</div>
+		<Div class="toc_an" name="download">
+			<h2>Download</h2>
+			<p>
+			  You can download this project in either
+			  <a href="https://github.com/bainternet/Lyte_video/zipball/master">zip</a> or
+			  <a href="https://github.com/bainternet/Lyte_video/tarball/master">tar</a> formats
+			</p>
+			<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+			  by running:
+			  <div class="code_con" style="padding: 15px;">
+			  <pre><code>$ git clone git://github.com/bainternet/Lyte_video<code></pre>
+			</div>
+			</p>
+		</div>
+	 </div>
+	<div>  
+		<div class="footer">
+		  get the source code on GitHub : <a href="https://github.com/bainternet/Lyte_video">bainternet/Lyte_video</a>
+		</div>
+		<script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
+	</div> 
 </body>
 </html>
