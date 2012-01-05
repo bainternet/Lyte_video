@@ -36,6 +36,14 @@
     .fly_menu ul li a{text-decoration: none;}
     .toc_an{text-decoration: none;}
     .code_con{background: none repeat scroll 0 0 #444444; border-radius: 15px 15px 15px 15px;padding: 2px;}
+    th {background: none repeat scroll 0 0 #15081F;border-bottom: 1px solid #3B224F;border-right: 1px solid #3B224F;color: #FFFFFF;font-weight: normal;padding: 10px;text-align: left;}
+    td{border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    line-height: 1.6;
+    padding: 7px 10px;}
+    tr.even {background: none repeat scroll 0 0 #E9E9E9;}
+    tr {background: none repeat scroll 0 0 #fff;}
+
   </style>
   
 </head>
@@ -44,7 +52,7 @@
   <a href="https://github.com/bainternet/Lyte_video"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
-    <div class="fly_menu" style="position: fixed; left: 45px; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 232px; width: 214px; border-radius: 25px 25px 25px 25px;">
+    <div class="fly_menu" style="position: fixed; left: 30px; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 232px; width: 214px; border-radius: 25px 25px 25px 25px;">
     <h4>Quick Nave</h4>
     <ul style="list-style-type: square;">
       <li><a href="#how-to-use">How To Use</a></li>
@@ -132,15 +140,15 @@
     <table border=2>
       <tr><th>Option</th><th>Defualt</th><th>Description</th></tr>
       <tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
-      <tr><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
+      <tr class="even"><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
       <tr><td>width</td><td>'560'</td><td>video width</td></tr>
-      <tr><td>height</td><td>'315'</td><td>video height</td></tr>
+      <tr class="even"><td>height</td><td>'315'</td><td>video height</td></tr>
       <tr><td>suggested</td><td>false</td><td>Show suggested videos</td></tr>
-      <tr><td>https</td><td>false</td><td>use HTTPS</td></tr>
+      <tr class="even"><td>https</td><td>false</td><td>use HTTPS</td></tr>
       <tr><td>privacy</td><td>false</td><td>Enable privacy mode</td></tr>
-      <tr><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
+      <tr class="even"><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
       <tr><td>play_hd</td><td>false</td><td>Play In HD</td></tr>
-      <tr><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
+      <tr class="even"><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
       <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
     </table>
       <a class="toc_an" name="author">  </a>
