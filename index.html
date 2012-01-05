@@ -32,6 +32,7 @@
     .fly_menu{background: none repeat scroll 0 0 ##F8F8FF;border: 2px solid #888844;color: #444400;margin-bottom: 1em;padding: 10px;left: 45px;position: fixed;top:232px;width: 214px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; border-radius: 20px;}
     .fly_menu ul{list-style-type: square;}
     .fly_menu ul li a{text-decoration: none;}
+    .toc_an{text-decoration: none;}
   </style>
   
 </head>
@@ -62,20 +63,20 @@
 
     <h1><a href="https://github.com/bainternet/Lyte_video">Lyte_video</a>
       <span class="small">by <a href="https://github.com/bainternet">bainternet</a></span></h1>
-    <a name="top"></a>
+    <a class="toc_an" name="top">  </a>
     <div class="description">
       Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
       This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
     </div>
     
     
-    <a name="#how-to-use"></a>
+    <a class="toc_an" name="#how-to-use">  </a>
     <h2>How To Use?</h2>
       <p>1. Include nessesary JS files</p>
       
       <pre><code class="html">
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-      <script type="text/javascript" src="/fancybox/lyte_video.jQuery.min.js"></script>
+      &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;lyte_video.jQuery.min.js&quot;&gt;&lt;/script&gt;
       </code></pre>
 
         <!--<script src="https://gist.github.com/1565093.js?file=gistfile1.html"></script>--> 
@@ -83,11 +84,11 @@
       <p>2. create an element with v_id attribute and set the value to a video it</p>
         
       <pre><code class="html">
-      <div id="content">
-        <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
-        <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
-        <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
-      </div>
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+      &lt;/div&gt;
       </code></pre>
 
         <!--<script src="https://gist.github.com/1565110.js?file=gistfile1.html"></script>--> 
@@ -95,16 +96,16 @@
       <p>3. last thing is to call the plugin on the container element</p>
         
       <pre><code class="html">
-      <script type="text/javascript">
+      &lt;script type=&quot;text/javascript&quot;&gt;
         jQuery(document).ready(function(){
           jQuery('#content').lyte_video();
         });
-      </script>
+      &lt;/script&gt;
       </code></pre>
 
        <!-- <script src="https://gist.github.com/1565112.js?file=gistfile1.html"></script>--> 
 
-    <a name="#demo"></a>
+    <a class="toc_an" name="#demo">  </a>
     <h2>Demo</h2>
       <p> this is the exact code from above</p>
       <div class="center">
@@ -120,7 +121,7 @@
         });
       </script>
       
-    <a name="#o-and-api"></a>
+    <a class="toc_an" name="#o-and-api">  </a>
     <h2>Options and API</h2>
     <p>You can pass options as key/value object to lyte_video() function</p>
     
@@ -138,17 +139,17 @@
       <tr><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
       <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
     </table>
-      <a name="#author"></a>
+      <a class="toc_an" name="#author">  </a>
       <h2>Authors</h2>
       <p>Bainternet</p>
     
 
-      <a name="#contact"></a>
+      <a class="toc_an" name="#contact">  </a>
       <h2>Contact</h2>
       <p><a href="http://en.bainternet.info/wordpress-services">WordPress Services</a>
       <br/> </p>
     
-    <a name="#lice"></a>
+    <a class="toc_an" name="#lice">  </a>
     <h2>License</h2>
       <p>Copyright 2012, Ohad Raz<br/>
       Dual licensed under the MIT and GPL licenses:
@@ -164,7 +165,7 @@
       
     </p>
 
-    <a name="#download"></a>
+    <a class="toc_an" name="#download">  </a>
     <h2>Download</h2>
     <p>
       You can download this project in either
