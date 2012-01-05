@@ -17,7 +17,7 @@
         e.preventDefault();
         var selector = $(this).attr('href');
         selector = '[name="' + selector.replace("#","") + '"]';
-        $('html,body').animate({scrollTop: $(selector).offset().top},'2800');
+        $(".bo").animate({scrollTop: ($(".bo").scrollTop() + $(selector).position().top},'2800');
       });
     });
   </script>
