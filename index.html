@@ -11,7 +11,7 @@
   <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
   <script>
     $(document).ready(function() {
-      $('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
+      $('.m_code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
 
       $('.sc').bind('click',function(e) {
         e.preventDefault();
@@ -102,17 +102,15 @@
     <h2>How To Use?</h2>
       <p>1. Include nessesary JS files</p>
       <div class="code_con">
-        <pre><code class="html">
+        <pre><code class="m_code html">
 &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;lyte_video.jQuery.min.js&quot;&gt;&lt;/script&gt;
         </code></pre>
       </div>
 
-        <!--<script src="https://gist.github.com/1565093.js?file=gistfile1.html"></script>--> 
-
       <p>2. create an element with v_id attribute and set the value to a video it</p>
       <div class="code_con">
-      <pre><code class="html">
+      <pre><code class=" m_code html">
 &lt;div id=&quot;content&quot;&gt;
   &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
   &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
@@ -120,11 +118,10 @@
 &lt;/div&gt;
       </code></pre>
       </div>
-        <!--<script src="https://gist.github.com/1565110.js?file=gistfile1.html"></script>--> 
 
       <p>3. last thing is to call the plugin on the container element</p>
       <div class="code_con">
-      <pre><code class="html">
+      <pre><code class="m_code html">
 &lt;script type=&quot;text/javascript&quot;&gt;
   jQuery(document).ready(function(){
     jQuery('#content').lyte_video();
@@ -132,7 +129,6 @@
 &lt;/script&gt;
       </code></pre>
       </div>
-       <!-- <script src="https://gist.github.com/1565112.js?file=gistfile1.html"></script>--> 
 
     <a class="toc_an" name="demo">  </a>
     <h2>Demo</h2>
