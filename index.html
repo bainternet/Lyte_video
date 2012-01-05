@@ -6,17 +6,16 @@
   <title>Lyte load youtube videos jQuery plugin</title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
+  <script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/dark.min.css">
+  <script>
+    $(document).ready(function() {
+      $('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
+    });
+  </script>
   <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background: -moz-radial-gradient(center center , #E1E7EB, #BBBFC2) no-repeat fixed 0 0 transparent;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
+    body {margin-top: 1.0em;background: -moz-radial-gradient(center center , #E1E7EB, #BBBFC2) no-repeat fixed 0 0 transparent;font-family: Helvetica, Arial, FreeSans, san-serif;color: #ffffff;}
+    #container {margin: 0 auto;width: 700px;}
     .gist-meta {display: none !important;}
     h1 { font-size: 3.8em; color: #7ab7cb; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
@@ -30,16 +29,30 @@
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
     .center{text-align:center;}
+    .fly_menu{background: none repeat scroll 0 0 ##F8F8FF;border: 2px solid #888844;color: #444400;margin-bottom: 1em;padding: 10px;left: 45px;position: fixed;top:232px;width: 214px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; border-radius: 20px;}
+    .fly_menu ul{list-style-type: square;}
+    .fly_menu ul li a{text-decoration: none;}
   </style>
-  <link rel="stylesheet" type="text/css" href="//webputty.commondatastorage.googleapis.com/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRiakTEM.css" />
-  <script type="text/javascript">(function(w,d){if(w.location!=w.parent.location||w.location.search.indexOf('__preview_css__')>-1){var t=d.createElement('script');t.type='text/javascript';t.async=true;t.src='http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRiakTEM';(d.body||d.documentElement).appendChild(t);}})(window,document);</script>
+  
 </head>
 
 <body>
   <a href="https://github.com/bainternet/Lyte_video"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
   <div id="container">
+    <div class="fly_menu" style="position: fixed; left: 45px; background: none repeat scroll 0% 0% rgb(255, 255, 255); top: 232px; width: 214px; border-radius: 25px 25px 25px 25px;">
+    <h4>Quick Nave</h4>
+    <ul style="list-style-type: square;">
+      <li><a href="#how-to-use">How To Use</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#o-and-api">Options and API</a></li>
+      <li><a href="#author">Author</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#lice">License</a></li>
 
+    </ul>
+    </div>
     <div class="download">
       <a href="https://github.com/bainternet/Lyte_video/zipball/master">
         <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
@@ -49,23 +62,49 @@
 
     <h1><a href="https://github.com/bainternet/Lyte_video">Lyte_video</a>
       <span class="small">by <a href="https://github.com/bainternet">bainternet</a></span></h1>
-
+    <a name="top"></a>
     <div class="description">
       Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
       This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
     </div>
     
     
-    
+    <a name="#how-to-use"></a>
     <h2>How To Use?</h2>
       <p>1. Include nessesary JS files</p>
-        <script src="https://gist.github.com/1565093.js?file=gistfile1.html"></script>
+      
+      <pre><code class="html">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+      <script type="text/javascript" src="/fancybox/lyte_video.jQuery.min.js"></script>
+      </code></pre>
+
+        <!--<script src="https://gist.github.com/1565093.js?file=gistfile1.html"></script>--> 
 
       <p>2. create an element with v_id attribute and set the value to a video it</p>
-        <script src="https://gist.github.com/1565110.js?file=gistfile1.html"></script>
-      <p>3. last thing is to call the plugin on the container element</p>
-        <script src="https://gist.github.com/1565112.js?file=gistfile1.html"></script>
+        
+      <pre><code class="html">
+      <div id="content">
+        <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
+        <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
+        <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
+      </div>
+      </code></pre>
 
+        <!--<script src="https://gist.github.com/1565110.js?file=gistfile1.html"></script>--> 
+
+      <p>3. last thing is to call the plugin on the container element</p>
+        
+      <pre><code class="html">
+      <script type="text/javascript">
+        jQuery(document).ready(function(){
+          jQuery('#content').lyte_video();
+        });
+      </script>
+      </code></pre>
+
+       <!-- <script src="https://gist.github.com/1565112.js?file=gistfile1.html"></script>--> 
+
+    <a name="#demo"></a>
     <h2>Demo</h2>
       <p> this is the exact code from above</p>
       <div class="center">
@@ -81,12 +120,12 @@
         });
       </script>
       
-
+    <a name="#o-and-api"></a>
     <h2>Options and API</h2>
     <p>You can pass options as key/value object to lyte_video() function</p>
     
     <table border=2>
-      <tr><td>Option</td><td>Defualt</td><td>Description</td></tr>
+      <tr><th>Option</th><th>Defualt</th><th>Description</th></tr>
       <tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
       <tr><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
       <tr><td>width</td><td>'560'</td><td>video width</td></tr>
@@ -99,16 +138,33 @@
       <tr><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
       <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
     </table>
+      <a name="#author"></a>
       <h2>Authors</h2>
       <p>Bainternet</p>
     
 
-    
+      <a name="#contact"></a>
       <h2>Contact</h2>
       <p><a href="http://en.bainternet.info/wordpress-services">WordPress Services</a>
-      <br/>      </p>
+      <br/> </p>
     
+    <a name="#lice"></a>
+    <h2>License</h2>
+      <p>Copyright 2012, Ohad Raz<br/>
+      Dual licensed under the MIT and GPL licenses:
+      <ul>
+        <li>
+          <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
+        </li>
+        <li>
+          <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>
+        </li>
+      </ul>
 
+      
+    </p>
+
+    <a name="#download"></a>
     <h2>Download</h2>
     <p>
       You can download this project in either
