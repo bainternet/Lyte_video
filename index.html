@@ -3,8 +3,9 @@
 <head>
   <meta charset='utf-8'>
 
-  <title>bainternet/Lyte_video @ GitHub</title>
-
+  <title>Lyte load youtube videos jQuery plugin</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://github.com/bainternet/Lyte_video/raw/master/lyte_video.jQuery.js"></script>
   <style type="text/css">
     body {
       margin-top: 1.0em;
@@ -46,25 +47,76 @@
       <span class="small">by <a href="https://github.com/bainternet">bainternet</a></span></h1>
 
     <div class="description">
-      Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads  
+      Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
+      This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
     </div>
-
     
-
     
-
     
+    <h2>How To Use?</h2>
+      <p>1. Include nessesary JS files</p>
+        <pre>
+            &lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"&gt;&lt;/script&gt;
+            &lt;script type="text/javascript" src="/fancybox/lyte_video.jQuery.min.js"&gt;&lt;/script&gt;
+        </pre>
 
-    
+      <p>2. create an element with v_id attribute and set the value to a video it</p>
+        <pre>
+          &lt;div id=&quot;content&quot;&gt;
+          &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+          &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+          &lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+          &lt;/div&gt;
+        </pre>
+      <p>3. last thing is to call the plugin on the container element</p>
+        <pre>
+          &lt;script type=&quot;text/javascript&quot;&gt;
+            jQuery(document).ready(function(){
+              jQuery(&#39;#content&#39;).lyte_video();
+            });
+          &lt;/script&gt;
+        </pre>
 
+    <h2>Demo</h2>
+      <p> this is the exact code from above</p>
+      <div id="content">
+        <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
+        <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
+        <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
+      </div>
+      
+      <script type="text/javascript">
+        jQuery(document).ready(function(){
+          jQuery('#content').lyte_video();
+        });
+      </script>
+      
+
+    <h2>Options and API</h2>
+    <p>You can pass options as key/value object to lyte_video() function</p>
     
+    <table border=2>
+      <tr><td>Option</td><td>Defualt</td><td>Description</td></tr>
+      <tr><td>event</td><td>'click'</td><td>event to bind</td></tr>
+      <tr><td>selector</td><td>'lz_embed'</td><td>jQuery class selector</td></tr>
+      <tr><td>width</td><td>'560'</td><td>video width</td></tr>
+      <tr><td>height</td><td>'315'</td><td>video height</td></tr>
+      <tr><td>suggested</td><td>false</td><td>Show suggested videos</td></tr>
+      <tr><td>https</td><td>false</td><td>use HTTPS</td></tr>
+      <tr><td>privacy</td><td>false</td><td>Enable privacy mode</td></tr>
+      <tr><td>embed_old</td><td>false</td><td>Use old embed code</td></tr>
+      <tr><td>play_hd</td><td>false</td><td>Play In HD</td></tr>
+      <tr><td>lang</td><td>'en_US'</td><td>youtube player language (not sure is this works)</td></tr>
+      <tr><td>thumbnail</td><td>0</td><td>Show video thumbnail (values: 0, 1, 2, 3, custom image URL, false to invoke manually)</td></tr>
+    </table>
       <h2>Authors</h2>
-      <p>bainternet (admin@bainternet.info)<br/>      </p>
+      <p>Bainternet</p>
     
 
     
       <h2>Contact</h2>
-      <p>Ohad (admin@bainternet.info)<br/>      </p>
+      <p><a href="http://en.bainternet.info/wordpress-services">WordPress Services</a>
+      <br/>      </p>
     
 
     <h2>Download</h2>
