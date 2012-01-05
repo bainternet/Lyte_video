@@ -20,7 +20,12 @@
     h1 { font-size: 3.8em; color: #7ab7cb; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #7ab7cb; }
+    h2 {  background: none repeat scroll 0 0 #448899;
+    -moz-border-radius: 15px; -webkit-border-radius: 15px; -khtml-border-radius: 15px; border-radius: 15px;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    padding-left: 35px;
+    text-align: left; }
     h3 { text-align: center; color: #7ab7cb; }
     a { color: #7ab7cb; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
@@ -35,7 +40,7 @@
     .fly_menu ul{list-style-type: square;}
     .fly_menu ul li a{text-decoration: none;}
     .toc_an{text-decoration: none;}
-    .code_con{background: none repeat scroll 0 0 #444444; border-radius: 15px 15px 15px 15px;padding: 2px;}
+    .code_con{background: none repeat scroll 0 0 #444444; -moz-border-radius: 15px; -webkit-border-radius: 15px; -khtml-border-radius: 15px; border-radius: 15px;padding: 2px;}
     th {background: none repeat scroll 0 0 #15081F;border-bottom: 1px solid #3B224F;border-right: 1px solid #3B224F;color: #FFFFFF;font-weight: normal;padding: 10px;text-align: left;}
     td{border-bottom: 1px solid #DDDDDD;
     border-right: 1px solid #DDDDDD;
@@ -43,7 +48,8 @@
     padding: 7px 10px;}
     tr.even {background: none repeat scroll 0 0 #E9E9E9;}
     tr {background: none repeat scroll 0 0 #fff;}
-
+    table{border-left: 1px solid #E2E2E2;
+    margin-bottom: 15px;}
   </style>
   
 </head>
@@ -186,7 +192,9 @@
     </p>
     <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
-      <pre>$ git clone git://github.com/bainternet/Lyte_video</pre>
+      <div class="code_con">
+      <pre><code>$ git clone git://github.com/bainternet/Lyte_video<code></pre>
+    </div>
     </p>
 
     <div class="footer">
