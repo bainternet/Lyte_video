@@ -15,8 +15,7 @@
       $('ul li a').click(function(e) {
         e.preventDefault();
         var selector = $(this).attr('href');
-        selector = '[attribute="' + selector.replace('#','') + '"]';
-        $(selector).scroll();
+        $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
       });
     });
   </script>
