@@ -17,9 +17,9 @@
 	  $('[name="how-to-use"]').show('fast');
       $('.sc').live('click',function(e) {
         e.preventDefault();
-		$(current_Div).hide("fast");
+		$('[name="'+ current_Div+ '"]').hide("fast");
 		current_Div = $(this).attr('n');
-        selector = 'div[name="' + $(this).attr('name') + '"]';
+        selector = '[name="' + $(this).attr('n') + '"]';
         $(selector).show("4500");
       });
     });
