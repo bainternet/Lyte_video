@@ -16,6 +16,7 @@
       $('.sc').bind('click',function(e) {
         e.preventDefault();
         var selector = $(this).attr('href');
+        selector = '[name="' + selector.replace("#","") + '"]';
         $('html,body').animate({scrollTop: $(selector).offset().top},'2800');
       });
     });
