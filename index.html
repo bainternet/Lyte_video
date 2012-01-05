@@ -11,6 +11,13 @@
   <script>
     $(document).ready(function() {
       $('pre code').each(function(i, e) {hljs.highlightBlock(e, '    ')});
+
+      $('ul li a').click(function(e) {
+        e.preventDefault();
+        var selector = $(this).attr('href');
+        selector = '[attribute="' + selector.replace('#','') + '"]';
+        $(selector).scroll();
+      });
     });
   </script>
   <style type="text/css">
@@ -125,7 +132,7 @@
 
     <a class="toc_an" name="demo">  </a>
     <h2>Demo</h2>
-      <p> Below you can see it in action using the exact code from above, which only holds a few divs with the video id's as attributes, the plugin knows to pull the video thumbnail and display the image by it self and only when you click on the image it will embed the video.</p>
+      <p> this is the exact code from above</p>
       <div class="center">
         <div id="content">
           <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
@@ -188,7 +195,7 @@
     <p>
       You can download this project in either
       <a href="https://github.com/bainternet/Lyte_video/zipball/master">zip</a> or
-      <a href="https://github.com/bainternet/Lyte_video/tarball/master">tar formats.</a>
+      <a href="https://github.com/bainternet/Lyte_video/tarball/master">tar</a> formats
     </p>
     <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
       by running:
