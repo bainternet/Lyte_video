@@ -24,9 +24,39 @@
 		$(this).parent().addClass("active");
         $(selector).show("4500");
       });
+	  $nav_li=$("#nav li");
+    $nav_li_selected=$("#nav li.active");
+    $nav_li_a=$nav_li.children("a");
+    var animSpeed=450; //fade speed
+    var hoverTextColor="#fff"; //text color on mouse over
+    var hoverBackgroundColor="#9e0039"; //background color on mouse over
+    var textColor=$nav_li_a.css("color");
+    var backgroundColor=$nav_li.css("background-color");
+    //init selected
+    $nav_li_selected.css("background-color",hoverBackgroundColor).children().css("color",hoverTextColor);
+    $nav_li_a.hover(function() {
+        var $this=$(this);
+        $this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed);
+    },function() {
+        var $this=$(this);
+        if(!$this.parent().is(".active")){
+            $this.stop().animate({ color: textColor }, animSpeed).parent().stop().animate({ backgroundColor: backgroundColor }, animSpeed);
+        }
+    });
+    //selected state
+    $nav_li_a.click(function(){
+        var $this=$(this);
+        $this.stop().animate({ color: hoverTextColor }, animSpeed).parent().stop().animate({ backgroundColor: hoverBackgroundColor }, animSpeed).addClass("active").siblings(".active").removeClass("active").stop().animate({ backgroundColor: backgroundColor }, animSpeed).children().stop().animate({ color: textColor }, animSpeed);
+    });
     });
   </script>
   <style type="text/css">
+  @import url(http://fonts.googleapis.com/css?family=Lobster);
+  #nav{position:relative; margin:40px; background:#eee; padding:0; font-family:'Lobster', Arial, Helvetica, sans-serif; font-size:21px; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:2px 2px 3px #ccc; -webkit-box-shadow:2px 2px 3px #ccc; box-shadow:2px 2px 3px #ccc;}
+#nav .clear{clear:both;}
+#nav ul{padding:0 0 0 5px; margin:0; list-style:none;}
+#nav li{float:left; margin:5px 10px 5px 0; background:#eee; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+#nav li a{text-decoration:none; color:#9e0039; display:block; padding:10px 15px;}
     body {margin-top: 1.0em;background: -moz-radial-gradient(center center , #E1E7EB, #BBBFC2) no-repeat fixed 0 0 transparent;font-family: Helvetica, Arial, FreeSans, san-serif;color: #ffffff;}
     #container {margin: 0 auto;width: 700px;}
     .gist-meta {display: none !important;}
@@ -50,13 +80,13 @@
     .center{text-align:center;}
     .fly_menu{color: #444400;margin-bottom: 1em;padding: 10px;width: 674px;}
     .navi{border: 1px solid;
-    float: left;
-    margin: -25px 8px 8px;
-    padding: 7px;}
-	.navi a{background: none repeat scroll 0 0 #444444;
-    
-	text-decoration: none;}
-    .toc_an{text-decoration: none;}
+		float: left;
+		margin: -25px 8px 8px;
+		padding: 7px;
+	}
+	.navi{background: none repeat scroll 0 0 #444444;
+		text-decoration: none;}
+	.toc_an{text-decoration: none;}
     .code_con{background: none repeat scroll 0 0 #444444; -moz-border-radius: 15px; -webkit-border-radius: 15px; -khtml-border-radius: 15px; border-radius: 15px;padding: 2px;}
     th {background: none repeat scroll 0 0 #15081F;border-bottom: 1px solid #3B224F;border-right: 1px solid #3B224F;color: #FFFFFF;font-weight: normal;padding: 10px;text-align: left;}
     td{border-bottom: 1px solid #DDDDDD;
@@ -67,8 +97,9 @@
     tr {background: none repeat scroll 0 0 #fff;}
     table{border-left: 1px solid #E2E2E2;
     margin-bottom: 15px;color: #000000;}
-	navi a:hover{background-color:#448899;color:#ffffff;}
-	active a{background-color:#448899;color:#ffffff;}
+	navi:hover{background-color:#448899;color:#ffffff;}
+	active{background-color:#448899;color:#ffffff;}
+	
   </style>
   
 </head>
@@ -92,9 +123,9 @@
 		  Lyte_video is a jquery plugin to embed youtube videos on selected event, after the page loads.
 		  This is a very small jQuery plugin (under 1kb minified gziped) that will let you "late load" youtube videos and save requests untill the user actualy clicks (or any other event) the play on the video and only then the video is embbeded.
 		</div>
-		<div class="fly_menu" style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
+		<div id="nav" class="fly_menu1">
 		
-		<ul style="list-style-type: none;">
+		<ul>
 		  <li class="navi active"><a class="sc" n="how-to-use">How To Use</a></li>
 		  <li class="navi"><a class="sc" n="download">Download</a></li>
 		  <li class="navi"><a class="sc" n="demo">Demo</a></li>
