@@ -44,7 +44,7 @@
 		//show thumbnail with play button at place holder
 		function thumbnail_play(element){
 			var imgSRC = '';
-			var v_id = $(element).attr("v_id");
+			var v_id = element.data('vid');
 			switch(settings.thumbnail){
 				case false:
 					return; //return for not image
