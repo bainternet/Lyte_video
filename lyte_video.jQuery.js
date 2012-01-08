@@ -44,7 +44,7 @@
 		//show thumbnail with play button at place holder
 		function thumbnail_play(element){
 			var imgSRC = '';
-			var v_id = element.data('vid');
+			var v_id = $(element).attr("v_id");
 			switch(settings.thumbnail){
 				case false:
 					return; //return for not image
@@ -89,7 +89,8 @@
 			$(im).css({
 				'position' : 'absolute',
 				'top' : imgH/2 - 48,
-				'left' : imgW/2 - 48
+				'left' : imgW/2 - 48,
+				'cursor': 'pointer'
 			});
 			$(im).attr('class','play_embed');
 			$(fonyDiv).append(im);
