@@ -89,7 +89,8 @@
 			$(im).css({
 				'position' : 'absolute',
 				'top' : imgH/2 - 48,
-				'left' : imgW/2 - 48
+				'left' : imgW/2 - 48,
+				'cursor': 'pointer'
 			});
 			$(im).attr('class','play_embed');
 			$(fonyDiv).append(im);
