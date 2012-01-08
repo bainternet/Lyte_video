@@ -113,7 +113,7 @@
 		  <li class="navi"><a class="sc" n="how-to-use">How To Use</a></li>
 		  <li class="navi"><a class="sc" n="download">Download</a></li>
 		  <li class="navi"><a class="sc" n="demo">Demo</a></li>
-		  <li class="navi"><a class="sc" n="o-and-api">Options and API</a></li>
+		  <li class="navi"><a class="sc" n="o-and-api">Options</a></li>
 		  <li class="navi"><a class="sc" n="author">Author</a></li>
 		  <li class="navi"><a class="sc" n="lice">License</a></li>
 		</ul>
@@ -130,13 +130,13 @@
 			</code></pre>
 		  </div>
 
-		  <p>2. create an element with v_id attribute and set the value to a video it</p>
+		  <p>2. create an element with data-vid attribute and set the value to a video it</p>
 		  <div class="code_con">
 		  <pre><code class=" m_code html">
 	&lt;div id=&quot;content&quot;&gt;
-	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
-	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
-	  &lt;div class=&quot;lz_embed&quot; v_id=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	  &lt;div class=&quot;lz_embed&quot; data-vid=&quot;MKIxhq8elrU&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	  &lt;div class=&quot;lz_embed&quot; data-vid=&quot;y-SpsT1dIJ0&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
+	  &lt;div class=&quot;lz_embed&quot; data-vid=&quot;YxGlfiP-3UA&quot;&gt;&lt;/div&gt;&lt;br/&gt;&lt;br/&gt;
 	&lt;/div&gt;
 		  </code></pre>
 		  </div>
@@ -157,9 +157,9 @@
 			  <p>Using the exact code from the "how To Use" section which is only 4 divs (1 container and 3 video place holders) the plugin knows to pull the video thumbnail and insert the image which is a lot faster on the page load time then having an object embed or an iframe and only when the user clicks the play button, the video is actually embedded and plays you can see it below.</p>
 			  <div class="center">
 				<div id="content">
-				  <div class="lz_embed" v_id="MKIxhq8elrU"></div><br/><br/>
-				  <div class="lz_embed" v_id="y-SpsT1dIJ0"></div><br/><br/>
-				  <div class="lz_embed" v_id="YxGlfiP-3UA"></div><br/><br/>
+				  <div class="lz_embed" data-vid="MKIxhq8elrU"></div><br/><br/>
+				  <div class="lz_embed" data-vid="y-SpsT1dIJ0"></div><br/><br/>
+				  <div class="lz_embed" data-vid="YxGlfiP-3UA"></div><br/><br/>
 				</div>
 			  </div>
 		</div>	  
