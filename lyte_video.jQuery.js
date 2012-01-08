@@ -44,7 +44,7 @@
 		//show thumbnail with play button at place holder
 		function thumbnail_play(element){
 			var imgSRC = '';
-			var v_id = $(element).data('vid');
+			var v_id = $(element).data("vid");
 			switch(settings.thumbnail){
 				case false:
 					return; //return for not image
@@ -101,7 +101,7 @@
 		
 		//actual embed
 		function lyte_embed(element){
-			var v_id = $(element).data("v_id");
+			var v_id = $(element).data("vid");
 			var src = '';
 			var q_vars = false;
 			if (settings.embed_old == false){
