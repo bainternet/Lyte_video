@@ -2,7 +2,7 @@
 	jQuery Youtube lazy Embed plugin
 	by Ohad Raz
 	http://en.bainternet.info
-	Version: 1.0
+	Version: 1.1
 ****************************************/
 (function($){
 	$.fn.lyte_video = function(options){  
