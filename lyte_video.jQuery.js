@@ -101,7 +101,7 @@
 		
 		//actual embed
 		function lyte_embed(element){
-			var v_id = $(element).attr("v_id");
+			var v_id = $(element).data("v_id");
 			var src = '';
 			var q_vars = false;
 			if (settings.embed_old == false){
